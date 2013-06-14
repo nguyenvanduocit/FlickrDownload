@@ -1,0 +1,21 @@
+{
+   "browser_action": {
+      "default_icon": "images/icon_19.png",
+      "default_title": "__MSG_defaultTitle__",
+      "default_popup": "popup.html"
+   },
+   "default_locale": "vi",
+   "description": "__MSG_extDesc__",
+   "icons": {
+      "16": "images/icon_16.png",
+      "19": "images/icon_19.png",
+      "32": "images/icon_32.png",
+      "64": "images/icon_64.png",
+      "128": "images/icon_128.png"
+   },
+   "manifest_version": 2,
+   "name": "__MSG_extName__",
+   "permissions": [ "tabs","http://*/*", "https://*/*","http://api.flickr.com/","storage"],
+   "content_security_policy": "script-src 'self' https://query.yahooapis.com https://*.google-analytics.com; object-src 'self'",
+   "version": "1.1.0"
+}
