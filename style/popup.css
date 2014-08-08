@@ -62,50 +62,13 @@ body {
 	top:-2px;
 	-webkit-user-select:none
 }
-.pa-delimiter {
-	display:inline-block;
-	width:2px;
-	height:19px;
-	background:url(../images/sprite.png);
-	background-position:0 19px;
-	margin-left:5px;
-	margin-right:4px;
-	position:relative;
-	top:-2px;
-	-webkit-user-select:none
-}
-.settings-button {
-	background:url(../images/sprite.png);
-	background-position:-138px 156px
-}
-.history-button {
-	background:url(../images/sprite.png);
-	background-position:-120px 156px
-}
 .inside-pa-layout .active,.settings-button:active,.history-button:active {
 	background-position-y: 137px
 }
 .inside-layout {
 	height: 21px;
 }
-.news{
-}
-.news p{
-	text-align: justify;
-	font-size: 14px;
-}
-.news h2
-{
-	font-size: 18px;
-	text-overflow: ellipsis;
-  	white-space:nowrap;
-  	overflow: hidden;
-}
-.news h2 a, .news h2{
-	text-decoration: none;
-	color:#21759B;
-	text-shadow:0 1px 0 white;
-}
-.news img{
-	display: none;
+.downloadlink {
+    text-decoration: none;
+    color: #09609B;
 }
