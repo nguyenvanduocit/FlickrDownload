@@ -1,27 +1,40 @@
 chrome.tabs.onUpdated.addListener(function(id, info, tab){
-    if(tab.url.indexOf("flickr.com")!== -1) {
+    var parser = document.createElement('a');
+    parser.href = tab.url;
+    if(parser.hostname =="www.flickr.com") {
+        var pathnames = parser.pathname.split('/');
+        if( isElEqual(pathnames[1], "photos"))
+        {
+if( isElEqual(pathnames[3], "sets") ) {
+    if(isNumber(pathnames[4])) {
         chrome.pageAction.show(tab.id);
     }
+}
+else
+{
+    if(isNumber(pathnames[3])) {
+        chrome.pageAction.show(tab.id);
+    }
+}
+        }
+    }
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-
-    if (request.method == "getTabURL") {
-
-        // Get the current active tab in the lastly focused window
-        chrome.tabs.query({
-            active: true,
-            windowId : chrome.windows.WINDOW_ID_CURRENT
-        }, function(tabs) {
-            // and use that tab to fill in out title and url
-            var tab = tabs[0];
-            console.log(tab.url);
-            sendResponse({url : tab.url});
-        });
+function isElEqual(value1, value2)
+{
+    if( typeof value1 != 'undefined' )
+    {
+        if( value1 ==  value2)
+        {
+            return true;
+        }
     }
-    else {
-        sendResponse({}); // snub them.
+    return false
+}
+function isNumber(value) {
+    if( typeof value != 'undefined' )
+    {
+        return !isNaN(parseFloat(value)) && isFinite(value);
     }
-
-    return true;
-});
+    return false
+}
